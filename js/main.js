@@ -36,6 +36,9 @@ $(window).on('load', function() {
 
 });
 
+function checkCert() {
+    window.open("https://www.youracclaim.com/badges/64c29acd-c1c9-4744-add0-fed2e83a7900/");
+}
 
 /*======== Document Ready Function ========*/
 $(document).ready(function() {
