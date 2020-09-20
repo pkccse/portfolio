@@ -1,22 +1,3 @@
-/*****************************************************************************
-  ____                                  _____ _
- / ___|___  ___ _ __ ___   ___  ___    |_   _| |__   ___ _ __ ___   ___  ___
-| |   / _ \/ __| '_ ` _ \ / _ \/ __|_____| | | '_ \ / _ \ '_ ` _ \ / _ \/ __|
-| |__| (_) \__ \ | | | | | (_) \__ \_____| | | | | |  __/ | | | | |  __/\__ \
- \____\___/|___/_| |_| |_|\___/|___/     |_| |_| |_|\___|_| |_| |_|\___||___/
-
-******************************************************************************/
-
-/************ Site Main Js **************************************
-
-    Template Name: Watson - Resume/Vcard Template
-    Author: cosmos-themes
-    Envato Profile: https://themeforest.net/user/cosmos-themes
-    version: 1.0
-    Copyright: 2018
-
-****************************************************************/
-
 /*======== Window Load Function ========*/
 $(window).on('load', function() {
 
@@ -26,12 +7,12 @@ $(window).on('load', function() {
 
 
     /*======== Isotope Portfolio Setup ========*/
-    if( $('.portfolio-items').length ) {
+    if ($('.portfolio-items').length) {
         var $elements = $(".portfolio-items"),
             $filters = $('.portfolio-filter ul li');
         $elements.isotope();
 
-        $filters.on('click', function(){
+        $filters.on('click', function() {
             $filters.removeClass('active');
             $(this).addClass('active');
             var selector = $(this).data('filter');
@@ -76,8 +57,8 @@ $(document).ready(function() {
     });
 
     /*======== Active Current Link ========*/
-    $('.nav-menu a').on('click',function() {
-        if($('.header-content.on').length) {
+    $('.nav-menu a').on('click', function() {
+        if ($('.header-content.on').length) {
             $('.header-content').removeClass('on');
         }
     });
@@ -135,7 +116,7 @@ $(document).ready(function() {
     });
 
     /*======== Skills Progress Animation ========*/
-    if($('.skills').length > 0) {
+    if ($('.skills').length > 0) {
         var el = new SimpleBar($('#resume')[0]).getScrollElement();
 
         $(el).on('scroll', function() {
@@ -194,9 +175,9 @@ $(document).ready(function() {
     });
 
     /*======== Google Map Setup ========*/
-    if($('#map').length) {
+    if ($('#map').length) {
         initMap();
-     }
+    }
 
 
     /*======== Contact Form Setup ========*/
@@ -209,7 +190,7 @@ function ajaxPortfolioSetup($ajaxLink, $ajaxContainer) {
     $ajaxLink.on('click', function(e) {
         var link = $(this).attr('href');
 
-        if(link === "#") {
+        if (link === "#") {
             e.preventDefault();
             return;
         }
@@ -219,7 +200,7 @@ function ajaxPortfolioSetup($ajaxLink, $ajaxContainer) {
         $ajaxContainer.addClass('on');
         $.ajax({
             cache: false,
-            headers: {"cache-control": "no-cache"},
+            headers: { "cache-control": "no-cache" },
             url: link,
             beforeSend: function() {
                 $ajaxContainer.find('.ajax-loader').show();
@@ -253,8 +234,8 @@ function initMap() {
         zoom = $("#map").data('zoom'),
         cordinates = new google.maps.LatLng(latitude, longitude);
 
-    var styles = [{"stylers":[{"saturation":-100},{"gamma":0.8},{"lightness":4},{"visibility":"on"}]},{"featureType":"landscape.natural","stylers":[{"visibility":"on"},{"color":"#5dff00"},{"gamma":4.97},{"lightness":-5},{"saturation":100}]}];
-        var mapOptions = {
+    var styles = [{ "stylers": [{ "saturation": -100 }, { "gamma": 0.8 }, { "lightness": 4 }, { "visibility": "on" }] }, { "featureType": "landscape.natural", "stylers": [{ "visibility": "on" }, { "color": "#5dff00" }, { "gamma": 4.97 }, { "lightness": -5 }, { "saturation": 100 }] }];
+    var mapOptions = {
         zoom: zoom,
         center: cordinates,
         mapTypeControl: false,
@@ -276,7 +257,7 @@ function contactFormSetup() {
 
     /*======== Check Field Have Value When Page Load ========*/
     $('.input__field').each(function() {
-        if($(this).val()) {
+        if ($(this).val()) {
             $(this).parent('.input').addClass('input--filled');
         } else {
             $(this).parent('.input').removeClass('input--filled');
@@ -285,7 +266,7 @@ function contactFormSetup() {
 
     /*======== Check Field Have Value When Keyup ========*/
     $('.input__field').on('keyup', function() {
-        if($(this).val()) {
+        if ($(this).val()) {
             $(this).parent('.input').addClass('input--filled');
         } else {
             $(this).parent('.input').removeClass('input--filled');
@@ -303,19 +284,19 @@ function contactFormSetup() {
 
 
         $('.cf-validate', this).each(function() {
-            if($(this).val() == '') {
+            if ($(this).val() == '') {
                 $(this).addClass('cf-error');
                 required += 1;
             } else {
-                if($(this).hasClass('cf-error')) {
+                if ($(this).hasClass('cf-error')) {
                     $(this).removeClass('cf-error');
-                    if(required > 0) {
+                    if (required > 0) {
                         required -= 1;
                     }
                 }
             }
         });
-        if( required === 0 ) {
+        if (required === 0) {
             $.ajax({
                 type: 'POST',
                 url: 'mail.php',
@@ -341,7 +322,7 @@ function contactFormSetup() {
 function showAlertBox(response, message) {
     var $alertBox = $('<div class="alert"></div>'),
         $alContainer = $('#contact-form .alert-container');
-    if( response == 200 ) {
+    if (response == 200) {
         $alertBox.addClass('alert-success').html(message);
         $alContainer.html($alertBox);
     } else {
@@ -350,4 +331,3 @@ function showAlertBox(response, message) {
     }
     $alContainer.fadeIn(300).delay(2000).fadeOut(400);
 }
-
