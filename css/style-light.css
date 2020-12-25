@@ -1,14 +1,3 @@
-.zoom {
-    transition: transform 0.5s;
-    /* Animation */
-}
-
-.zoom:hover {
-    transform: scale(1.04);
-    color: #5ab027;
-    shape-outside: border-box;
-}
-
 * {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
