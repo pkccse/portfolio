@@ -833,19 +833,19 @@
                     <div class="row contact-info mb-70">
 
                         <!--Contact Info Item-->
-                        <div class="col-md-4 info-item" onclick="SendMail()">
+                        <div class="col-md-3 info-item contact-box" onclick="SendMail()">
                             <span class="icon"><i class="fas fa-paper-plane"></i></span>
                             <h5>Email</h5>
                         </div>
 
                         <!--Contact Info Item-->
-                        <div class="col-md-4 info-item">
+                        <div class="col-md-3 info-item contact-box" onclick="OpenUrl()">
                             <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
                             <h5>Delhi, India</h5>
                         </div>
 
                         <!--Contact Info Item-->
-                        <div class="col-md-4 info-item" onclick="Call()">
+                        <div class="col-md-3 info-item contact-box" onclick="Call()">
                             <span class="icon"><i class="fas fa-phone"></i></span>
                             <h5>Call</h5>
                         </div>
@@ -945,6 +945,10 @@
     function Call() {
         window.location = "tel:+917042308258";
     };
+
+    function OpenUrl() {
+        window.location = "https://goo.gl/maps/U5cdghvjg55E9xxNA";
+    }
 </script>
 
 </html>
