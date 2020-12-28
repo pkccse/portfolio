@@ -284,5 +284,17 @@
 
 .project-head {
     font-weight: 600;
-    color: #2196F3;
+    color: #2196f3;
+}
+
+.qr-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+}
+
+.modal-content {
+    background-color: #fff0 !important;
+    border: 0px;
 }
