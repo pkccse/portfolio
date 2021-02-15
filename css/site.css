@@ -295,6 +295,12 @@
 }
 
 .modal-content {
-    background-color: #fff0 !important;
-    border: 0px;
+    background-color: #2196f3 !important;
+    padding-top: 70%;
+    border-radius: 35px;
+    padding-bottom: 70%;
+    width: 80%;
+    margin: auto;
+    border: 10px solid black;
+    box-shadow: 1px 1px 10px #fff;
 }
