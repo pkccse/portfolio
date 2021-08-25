@@ -36,8 +36,12 @@ $(window).on('load', function() {
 
 });
 
-function checkCert() {
-    window.open("https://www.youracclaim.com/badges/64c29acd-c1c9-4744-add0-fed2e83a7900/");
+function checkCert(name = "") {
+    if (name === 'ai') {
+        window.open('/files/aicert.pdf');
+    } else {
+        window.open("https://www.youracclaim.com/badges/64c29acd-c1c9-4744-add0-fed2e83a7900/");
+    }
 }
 
 /*======== Document Ready Function ========*/
